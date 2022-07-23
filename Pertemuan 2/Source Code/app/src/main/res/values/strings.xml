@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Tugas Pertemuan 2</string>
+    <string name="hitung_lingkaran">Hitung Lingkaran</string>
+    <string name="hasil_hitung_lingkarang">Hasil Hitung Lingkarang:</string>
+    <string name="masukkan_nilai_jari_jari">Masukkan nilai jari-jari</string>
+    <string name="Luas" />
+    <string name="luas">Luas :</string>
+    <string name="hasil_luas">Hasil Luas:  </string>
+    <string name="hasil_kel">Hasil Kelililng:  </string>
+    <string name="h2ab">Hubungan antara 2 bilangan</string>
+    <string name="hasil_h2ab">Hasil:</string>
+    <string name="nilai_a">Masukkan Nilai a</string>
+    <string name="nilai_b">Masukkan Nilai b</string>
+    <string name="cek_h2ab">Cek Hasil</string>
+    <string name="btn_2">Pindah Halaman Hubungan 2 Bilangan</string>
+    <string name="hasil">Hasil:</string>
+    <string name="lebih_besar_dari">Lebih Besar Dari</string>
+    <string name="levih_kecil_dari">Lebih Kecil Dari</string>
+    <string name="sama_dengan">Sama Dengan</string>
+</resources>
