@@ -11,5 +11,8 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 }
