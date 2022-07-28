@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">praktik_2</string>
+    <string name="rumus">Rumus</string>
+    <string name="about">About</string>
+    <string name="berat_badan_ideal">Berat Badan Ideal</string>
+    <string name="hint_berat_badan">Input Tinggi Badan (CM)</string>
+    <string name="button_hitung">Hitung</string>
+    <string name="hasil">Hasil:</string>
+    <string name="beraat_badan_ideal_anda">Beraat Badan Ideal Anda :</string>
+    <string name="nama">Nama : Rohman Beny Riyanto</string>
+    <string name="kelas">Kelas : VSGA2022-JMP-B-TelU</string>
+    <string name="laki_laki">Laki Laki</string>
+    <string name="wanita">Wanita</string>
+    <string name="h1_rumus">Rumus yang digunakan:</string>
+    <string name="rumus_laki">Rumus Laki-Laki :  (tinggi-100)-(0.10 * (tinggi-100)</string>
+    <string name="rumus_wanita">Rumus Wanita : (tinggi-100)-(0.15 * (tinggi-100)</string>
+</resources>
