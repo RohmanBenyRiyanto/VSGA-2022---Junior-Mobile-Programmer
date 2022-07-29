@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Tugas Pertemuan 5</string>
+    <string name="nama">Nama</string>
+    <string name="kalkulator">Kalkulator</string>
+    <string name="list_view">List View</string>
+    <string name="hint_name">Masukkan Nama Anda</string>
+    <string name="tampilkan">Tampilkan</string>
+    <string name="nama_anda">Nama Anda</string>
+    <string name="masukkan_dua_angka">Masukkan Dua Angka</string>
+    <string name="masukkan_angka_pertama">Masukkan angka pertama</string>
+    <string name="masukkan_angka_kedua">Masukkan angka kedua</string>
+    <string name="tambah">Tambah</string>
+    <string name="kurangi">Kurangi</string>
+    <string name="pembagian">Bagi Nilai</string>
+    <string name="perkalian">Perkalian</string>
+    <string name="bershikan">Bershikan</string>
+    <string name="hasil">Hasil</string>
+    <string name="hasil_kalkulator">Hasil Kalkulator</string>
+</resources>
