@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Tugas Pertemuan 6</string>
+    <string name="show_toast">Show Toast</string>
+    <string name="count">Count</string>
+    <string name="hasil">0</string>
+</resources>
