@@ -8,4 +8,10 @@
     <string name="launch_internal_page">Launch Internal Page</string>
     <string name="luanch_external_page">Luanch External Page</string>
     <string name="data_delete_done">Data Berhasil dihapus</string>
+    <string name="tambahkan_judul_buku">Tambahkan Judul Buku</string>
+    <string name="tambahkan_deskripsi">Tambahkan Deskripsi</string>
+    <string name="taambah_buku">Tambah Buku</string>
+    <string name="judu">Judu</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="delete_data">Delete Data</string>
 </resources>

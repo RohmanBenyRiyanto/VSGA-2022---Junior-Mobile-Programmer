@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/layout/activity_internal.xml" value="0.176" />
+        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/drawable/card.xml" value="0.1" />
+        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/drawable/card_background.xml" value="0.1215" />
+        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/drawable/card_state_pressed.xml" value="0.1215" />
+        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/layout/activity_external.xml" value="0.1" />
+        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/layout/activity_internal.xml" value="0.4" />
+        <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/layout/activity_listview.xml" value="0.22327898550724637" />
         <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Kominfo/Tugas/Pertemuan 8/Source Code/app/src/main/res/layout/layout_internal.xml" value="0.1" />
       </map>

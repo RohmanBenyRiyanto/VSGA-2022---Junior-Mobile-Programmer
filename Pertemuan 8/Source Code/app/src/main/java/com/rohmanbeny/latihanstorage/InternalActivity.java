@@ -1,135 +1,102 @@
 package com.rohmanbeny.latihanstorage;
 
-import android.annotation.SuppressLint;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.rohmanbeny.latihanstorage.handler.DatabaseHandler;
+import com.rohmanbeny.latihanstorage.model.BukuModel;
+import com.rohmanbeny.latihanstorage.model.Card;
+import com.rohmanbeny.latihanstorage.model.Post;
 
-public class InternalActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.List;
 
-    public static final String FILENAME = "namafile.txt";
-    Button btn_create, btn_update, btn_read, btn_detele;
-    TextView textBaca;
+
+public class InternalActivity extends AppCompatActivity {
+
+    DatabaseHandler databaseHelper = DatabaseHandler.getInstance(this);
+    EditText et_judul, et_text;
+    Button btn_add, btn_delete_data;
+    private CardArrayAdapter cardArrayAdapter;
+    private ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internal);
-        btn_create = (Button) findViewById(R.id.btn_create);
-        btn_update = (Button) findViewById(R.id.btn_update);
-        btn_read = (Button) findViewById(R.id.btn_read);
-        btn_detele = (Button) findViewById(R.id.btn_delete);
-        textBaca = (TextView) findViewById(R.id.tv_baca);
 
-        btn_create.setOnClickListener(this);
-        btn_update.setOnClickListener(this);
-        btn_read.setOnClickListener(this);
-        btn_detele.setOnClickListener(this);
-    }
 
-    void createFile() {
-        String isiFile = "Ini Adalah Create isi file";
-        File file = new File(this.getFilesDir(), FILENAME);
-
-        FileOutputStream outputStream = null;
-        try {
-
-            file.createNewFile();
-            outputStream = new FileOutputStream(file, true);
-            outputStream.write(isiFile.getBytes());
-            outputStream.flush();
-            outputStream.close();
-
-            Toast.makeText(this, "File berhasil dibuat", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        List<Post> posts = databaseHelper.getAllPosts();
+        for (Post p : posts) {
+            TextView textView = (TextView) findViewById(R.id.tv_baca);
+            textView.setText(p.text);
         }
+
+        btn_add = (Button) findViewById(R.id.btn_post);
+        btn_delete_data = (Button) findViewById(R.id.btn_delete_data);
+        et_judul = (EditText) findViewById(R.id.et_judul_buku);
+        et_text = (EditText) findViewById(R.id.et_desc);
+        listView = (ListView) findViewById(R.id.card_listView);
+
+        listView.addHeaderView(new View(this));
+        listView.addFooterView(new View(this));
+
+        cardArrayAdapter = new CardArrayAdapter(getApplicationContext(), R.layout.activity_listview);
+
+
+        btn_add.setOnClickListener(v -> {
+            BukuModel buku = new BukuModel();
+            buku.judul = et_judul.getText().toString();
+            Post post = new Post();
+            post.buku = buku;
+            post.text = et_text.getText().toString();
+            databaseHelper.addBuku(post);
+
+
+            Toast.makeText(getApplicationContext(), "Data Berhasil Ditambahkan", Toast.LENGTH_LONG).show();
+            passData();
+            listView.setAdapter(cardArrayAdapter);
+
+        });
+
+        btn_delete_data.setOnClickListener(v -> {
+            BukuModel buku = new BukuModel();
+            databaseHelper.deleteAllPostsAndUsers();
+            Toast.makeText(getApplicationContext(), "Data Berhasil Dihapus", Toast.LENGTH_LONG).show();
+            passData();
+            listView.setAdapter(cardArrayAdapter);
+        });
+
+
     }
 
+    public void passData() {
+        List<Post> posts = databaseHelper.getAllPosts();
 
-
-    void updateFile() {
-        String update = "Ini adalah Update isi file";
-        File file = new File(getFilesDir(), FILENAME);
-        FileOutputStream outputStream = null;
-        try {
-            file.createNewFile();
-            outputStream = new FileOutputStream(file, false);
-            outputStream.write(update.getBytes());
-            outputStream.flush();
-            outputStream.close();
-
-            Toast.makeText(this, "File berhasil diupdate", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    void readFile() {
-        File sdcard = getFilesDir();
-        File file = new File(sdcard, FILENAME);
-        if (file.exists()) {
-            StringBuilder text = new StringBuilder();
-
-            try {
-                BufferedReader br = new BufferedReader(new java.io.FileReader(file));
-
-                String line = br.readLine();
-
-                while(line != null) {
-                    text.append(line);
-                    line = br.readLine();
-                }
-                br.close();
-
-            } catch (IOException e) {
-                System.out.println("Error " + e.getMessage());
+        for (Post p : posts) {
+            if (p.buku == null && p.text == null) {
+                Card card = new Card("Buku Tidak Tersedia", "-");
+                cardArrayAdapter.add(card);
+            } else {
+                assert p.buku != null;
+                Card card = new Card(p.buku.judul, p.text);
+                cardArrayAdapter.add(card);
             }
-            textBaca.setText(text.toString());
-            Toast.makeText(this, "File berhasil dibaca", Toast.LENGTH_SHORT).show();
+
+
         }
     }
 
-    void deleteFile() {
-        File sdcard = getFilesDir();
-        File file = new File(sdcard, FILENAME);
-        if (file.exists()) {
-            file.delete();
-            textBaca.setText(R.string.data_delete_done);
 
-            Toast.makeText(this, "File berhasil dihapus", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onClick(View v) {
-        jalankanPerintah(v.getId());
-
-    }
-
-    public void jalankanPerintah(int id) {
-        switch (id) {
-            case R.id.btn_create:
-                createFile();
-                break;
-            case R.id.btn_update:
-                updateFile();
-                break;
-            case R.id.btn_read:
-                readFile();
-                break;
-            case R.id.btn_delete:
-                deleteFile();
-                break;
-        }
-    }
 }
+
