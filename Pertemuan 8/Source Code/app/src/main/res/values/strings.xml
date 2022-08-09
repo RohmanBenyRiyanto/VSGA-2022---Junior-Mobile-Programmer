@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LatihanStorage</string>
+    <string name="buat_file">Buat File</string>
+    <string name="ubah_file">Ubah File</string>
+    <string name="baca_file">Baca File</string>
+    <string name="hapus_file">Hapus File</string>
+    <string name="hasil_baca_file">Hasil Baca File</string>
+    <string name="launch_internal_page">Launch Internal Page</string>
+    <string name="luanch_external_page">Luanch External Page</string>
+    <string name="data_delete_done">Data Berhasil dihapus</string>
+</resources>
