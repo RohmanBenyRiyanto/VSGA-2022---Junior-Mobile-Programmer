@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Pertemuan 9</string>
+    <string name="logo_kominfo">Logo Kominfo</string>
+    <string name="proyek_1">PROYEK 1</string>
+    <string name="judu">Tittle</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="tittle_app_bar_home">Aplikasi Catatan Proyek 1</string>
+    <string name="tambah_catatan">Tambah Catatan</string>
+    <string name="tittle_home_bar">Aplikasi Catatan Proyek 1</string>
+    <string name="tittle_app_bar_tambah_catatan">Tambah Catatan</string>
+    <string name="judul_catanan">Judul Catanan</string>
+    <string name="nama_file">Nama File</string>
+    <string name="catatan">Catatan</string>
+    <string name="catatan_name">Catatan Name</string>
+    <string name="catatan_description">Catatan Description</string>
+    <string name="id" type="id">0</string>
+    <string name="name" type="id">Heading</string>
+    <string name="value" type="id">This is your description</string>
+    <string name="empty_list_text">Catatan Tidak Tersedia</string>
+    <string name="button">Load Data</string>
+</resources>
