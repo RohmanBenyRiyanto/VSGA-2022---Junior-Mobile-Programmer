@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LocalDatabase</string>
+    <string name="title">Judul</string>
+    <string name="category">Kategori</string>
+    <string name="description">Deskripsi</string>
+    <string name="date">Tanggal</string>
+    <string name="submit">Submit</string>
+    <string name="delete">Hapus</string>
+</resources>
