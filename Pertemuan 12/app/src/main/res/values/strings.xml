@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pertemuan 12</string>
+    <string name="map_key" translatable="false">Enter your google API key here</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="posisi_user">Posisi User</string>
+    <string name="koordinat_user">Koordinat User</string>
+</resources>
